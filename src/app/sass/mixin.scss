@@ -1,0 +1,21 @@
+@use './variabel.scss' as *;
+
+@mixin breakpoint($size) {
+  @if $size == "mobile" {
+    @media ($max-width-mobile) {
+      @content;
+    }
+  }@else if $size == "samll" {
+    @media (($min-width-small) and ($max-width-small)) {
+      @content;
+    }
+  }@else if $size == "medium" {
+    @media (($min-width-medium) and ($max-width-medium)) {
+      @content;
+    }
+  }@else if $size == "large" {
+    @media ($max-width-large) {
+      @content;
+    }
+  }
+}

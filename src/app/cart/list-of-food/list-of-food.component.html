@@ -1,0 +1,12 @@
+<div class="item">
+  <figure>
+    <img src={{item.image}} alt="">
+  </figure>
+  <p>{{item.name}}</p>
+  <div class="Quantity">
+    <label for="">Quantity</label>
+    <input type="number" name="Quntity" value="{{item.numberOfItem}}" min="0" max="1000" class="form-control" (input)="increasePrice(itemNumber.value)" #itemNumber>
+  </div>
+  <p>$ {{total}}</p>
+  <button (click)="Remove()">Remove</button>
+</div>

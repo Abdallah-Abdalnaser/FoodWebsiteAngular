@@ -1,0 +1,50 @@
+@use '../sass/variabel.scss' as *;
+
+nav {
+  position: sticky;
+  top: 0px;
+  background: white;
+  box-shadow: 0px 2px 7px #ededed, 0px 2px 11px #ddd;
+  z-index: 10;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: None;
+    padding: 0px;
+    margin: 0px;
+    li {
+      a {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        color: $mainColor;
+        padding: 15px;
+        font: {
+          weight:700;
+          size: 20px;
+        }
+        &.active ,&:hover {
+          color: white;
+          background-color: $mainColor;
+        }
+        transition: 0.3s;
+        span {
+          position: absolute;
+          text-align: center;
+          top: 5px;
+          left: 5px;
+          background-color: red;
+          color: white;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          font: {
+            size:13px;
+            weight:700;
+          }
+        }
+      }
+    }
+  }
+}

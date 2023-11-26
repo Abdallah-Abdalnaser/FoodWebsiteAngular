@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+      <app-list-of-food *ngFor="let item of cart; let id = index" [item]="item" [id]="id"></app-list-of-food>
+    </div>
+    <div class="col-md-4">
+      <app-total></app-total>
+    </div>
+  </div>
+</div>

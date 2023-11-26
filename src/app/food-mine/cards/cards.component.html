@@ -1,0 +1,28 @@
+<div class="card" [routerLink]="['/Foodpage',food.id]">
+  <figure>
+    <img src="{{food.image}}" alt="">
+  </figure>
+  <figcaption>
+    <div class="row">
+      <p>{{food.name}}</p>
+      <fa-icon [icon]="faHeart" class="{{food.favorite}}"></fa-icon>
+    </div>
+    <div class="row">
+      <igc-rating value="{{food.rate}}" min="1" max="5" (igcChange)="ratingChanged($event);"></igc-rating>
+    </div>
+    <div class="row">
+      <div class="country">
+        <ul>
+          <li *ngFor="let cou of food.country">{{cou}}</li>
+        </ul>
+      </div>
+      <div class="time">
+        <fa-icon [icon]="faClock"></fa-icon>
+        <span>{{food.time}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <span>$ {{food.price}}</span>
+    </div>
+  </figcaption>
+</div>
