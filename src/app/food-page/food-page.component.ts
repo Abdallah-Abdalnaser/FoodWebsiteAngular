@@ -16,6 +16,7 @@ import { CartService } from '../shaired/cart.service';
 export class FoodPageComponent implements OnInit{
   food!:any;
   faHeart:IconDefinition=faHeart;
+  show:boolean=false;
   constructor(private foodService:Foods,private route:ActivatedRoute ,private CartService:CartService){}
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -28,5 +29,9 @@ export class FoodPageComponent implements OnInit{
     sound.load();
     sound.play();
     this.CartService.AddToCart(this.food);
+    setTimeout(() => {
+      this.show=true
+    });
+    this.show = false;
   }
 }

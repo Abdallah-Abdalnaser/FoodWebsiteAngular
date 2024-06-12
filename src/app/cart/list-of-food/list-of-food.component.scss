@@ -1,6 +1,7 @@
 @use '../../sass/variabel.scss' as *;
 @use '../../sass/mixin.scss' as *;
 
+
 .item {
   display: flex;
   justify-content: space-between;
@@ -53,3 +54,7 @@
     border-radius: 5px;
   }
 }
+
+
+
+

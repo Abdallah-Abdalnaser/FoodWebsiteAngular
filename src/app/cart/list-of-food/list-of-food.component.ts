@@ -2,6 +2,7 @@ import { AfterViewInit, Component , DoCheck, ElementRef, Input, ViewChild} from 
 import { Food } from 'src/app/food-mine/food.model';
 import { CartService } from 'src/app/shaired/cart.service';
 import { ActivatedRoute , Router } from '@angular/router';
+import { AlertService } from 'src/app/serves/alert.service';
 
 @Component({
   selector: 'app-list-of-food',
@@ -14,14 +15,13 @@ export class ListOfFoodComponent implements AfterViewInit {
   @ViewChild("itemNumber") inputNumber!:ElementRef;
   total!:number;
 
-  constructor(private CartService:CartService , private router:Router , private route:ActivatedRoute) {};
+  constructor(private CartService:CartService , private router:Router , private route:ActivatedRoute , private AlertService:AlertService ) {};
 
   ngAfterViewInit(): void {
     if ( this.inputNumber != undefined) {
       this.total = this.item.price * +this.inputNumber.nativeElement.value;
       this.CartService.total.next(this.total);
     }
-
   }
 
   Remove():void {
@@ -33,6 +33,10 @@ export class ListOfFoodComponent implements AfterViewInit {
     if (this.CartService.item.length === 0) {
       this.router.navigate(['noitem'],{relativeTo:this.route});
     }
+    setTimeout(() => {
+      this.AlertService.show.next(true);
+    });
+    this.AlertService.show.next(false);
   };
 
   increasePrice(itemNumber: String):void {

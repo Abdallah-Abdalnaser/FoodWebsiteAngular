@@ -1,3 +1,7 @@
+<div class="add" [ngClass]="{active: show===true}">
+  Your Meal  Added.
+  <div></div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -26,7 +30,7 @@
           <p>Price: <span>$ {{food?.price}}</span></p>
         </div>
         <div class="row">
-          <button (click)="AddToCart()" routerLink="/cart">Add To Cart</button>
+          <button (click)="AddToCart()">Add To Cart</button>
         </div>
       </figcaption>
     </div>

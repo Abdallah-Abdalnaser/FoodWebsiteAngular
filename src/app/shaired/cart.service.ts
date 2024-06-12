@@ -10,6 +10,7 @@ export class CartService {
     if (this.item.length > 0) {
       for (let index = 0; index <= this.item.length; index++) {
         if (this.item[index].name === foodSelected.name) {
+          this.item[index].numberOfItem ++;
           break;
         } else if(index === this.item.length-1){
           this.item.push(foodSelected);

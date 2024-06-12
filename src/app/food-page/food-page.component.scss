@@ -1,7 +1,33 @@
 @use '../sass/variabel.scss' as * ;
 
+.add {
+  display: none;
+  &.active {
+    display: flex;
+    position: absolute;
+    background-color:#81c784;
+    color: white;
+    padding: 20px 60px;
+    top: 26px;
+    right: 0px;
+    z-index: 100;
+    font-weight: bold;
+    opacity: 0;
+    animation: hidden 4s linear forwards;
+    div {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 0%;
+      height: 5px;
+      background-color: #388e3c;
+      animation: progress 3s linear forwards;
+    }
+  }
+}
 .container {
   margin-top: 50px;
+  overflow-x:hidden ;
   .row {
     display: flex;
     align-items: center;
@@ -86,11 +112,42 @@
             border-radius: 18px;
             transition: 0.3s;
             &:hover {
-              background-color: rgb(158, 53, 53);
+              background-color: #b55214;
             }
           }
         }
       }
     }
+  }
+}
+
+
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes hidden {
+  0% {
+    opacity: 1;
+    right: 15px;
+  }
+  25% {
+    opacity: 1;
+    right: 35px;
+  }
+  50% {
+    opacity: 1;
+    right: 35px;
+  }
+  75% {
+    opacity: 1;
+    right: 35px;
+  }
+  100% {
+    right: 15px;
+    display: none;
   }
 }
