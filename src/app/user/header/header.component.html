@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li><a [routerLink]="['/user','findmine']" routerLinkActive="active">Food Ordering!</a></li>
+    <li>
+      <a [routerLink]="['/user','cart']" routerLinkActive="active">
+        <fa-icon [icon]="faCartShopping"></fa-icon>
+        <span *ngIf="NumberOfYourItem !=0">{{NumberOfYourItem}}</span>
+      </a>
+      <a [routerLink]="['/auth','login']" routerLinkActive="active">
+        <fa-icon [icon]="faDoorOpen"></fa-icon>
+      </a>
+    </li>
+  </ul>
+</nav>

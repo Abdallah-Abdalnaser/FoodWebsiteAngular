@@ -1,0 +1,120 @@
+@use '../../sass/variabel.scss' as *;
+@use '../../sass/mixin.scss' as *;
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px;
+  input[type=search] {
+    border: 0px;
+    outline:0px;
+    background-color: #eee;
+    padding: 15px;
+    width: 50%;
+    border-radius:30px 0px 0px 30px;
+    &::placeholder {
+      color: #ccc;
+      font: {
+        size:15px;
+        weight:300;
+      };
+    }
+  }
+  button {
+    padding: 15px;
+    width: 10%;
+    @include breakpoint("mobile") {
+      width: 20%;
+    }
+    border: 0px;
+    outline: 0px;
+    background-color: $mainColor;
+    color: white;
+    border-radius:0px 30px 30px 0px;
+    font: {
+      size:15px;
+      weight:500;
+    };
+    transition: 0.3s;
+    &:hover {
+      background-color:#b55214;
+    }
+  }
+  .seggest {
+    display: none;
+    position: absolute;
+    width: 48%;
+    top: 65px;
+    left: 22%;
+    background-color: white;
+    box-shadow: 0px 0px 5px #9797976b;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 9999;
+    @include breakpoint("mobile") {
+      padding: 10px;
+    }
+    &.active {
+      display: flex;
+    }
+    .cart {
+      display: flex;
+      margin: 10px 0px;
+      border-bottom: 1px solid #eee;
+      transition: 0.3s;
+      &:hover {
+        transform:scale(1.02)
+      }
+      &:last-of-type {
+        border-bottom: 0px;
+        margin-bottom: 0px;
+      }
+      figure {
+        margin: 0px;
+        img {
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          @include breakpoint("mobile") {
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+      figcaption {
+        margin-left: 15px;
+        p {
+          margin: 0px;
+          color: $mainColor;
+          cursor: pointer;
+          font: {
+            size:16px;
+            weight:700
+          }
+          @include breakpoint("mobile") {
+            font-size: 11px;
+          }
+        }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0px;
+          li {
+            list-style: none;
+            margin-right: 5px;
+            margin-top: 5px;
+            margin-bottom:5px;
+            padding: 2px 4px;
+            color: #777;
+            background-color: #eee;
+            font-size: 10px;
+            font-weight: 500;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}

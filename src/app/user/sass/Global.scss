@@ -1,0 +1,21 @@
+@use './variabel.scss' as * ;
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $mainColor;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}

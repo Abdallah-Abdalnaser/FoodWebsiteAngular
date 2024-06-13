@@ -1,0 +1,60 @@
+<form action="" (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="info">
+    <h2>Register</h2>
+    <p>Sign up with your email address</p>
+  </div>
+  <div class="name">
+    <div class="form-group">
+      <label for="firstname" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstname" ngModel required name="firstname" #fName="ngModel">
+      <p *ngIf="!fName.valid && fName.touched">*Required Field</p>
+    </div>
+    <div class="form-group">
+      <label for="lastname" class="form-label">Last Name</label>
+      <input type="email" class="form-control" id="lastname" ngModel required name="lastname" #lName="ngModel">
+      <p *ngIf="!lName.valid && lName.touched">*Required Field</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Email address" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="Email address" aria-describedby="emailHelp" ngModel required email name="email" #email="ngModel">
+    <p *ngIf="!email.value && email.touched">*Required Field</p>
+    <p *ngIf="!email.valid && email.touched && email.value">*Invalid email</p>
+  </div>
+  <div class="form-group">
+    <label for="address" class="form-label">Address</label>
+    <input type="text" class="form-control" id="address" ngModel required name="address" #Address = "ngModel">
+    <p *ngIf="!Address.value && Address.touched">*Required Field</p>
+  </div>
+  <div class="form-group">
+    <label for="userName" class="form-label">user Name</label>
+    <input type="text" class="form-control" id="userName" ngModel required name="userName" #userName = "ngModel">
+    <p *ngIf="!userName.value && userName.touched">*Required Field</p>
+  </div>
+  <div class="form-group">
+    <div class="passlabel">
+      <label for="password" class="form-label">Password</label>
+      <fa-icon [icon]="passwordVisible ? faEye : faEyeSlash" (click)="showpassword()"></fa-icon>
+    </div>
+    <input type={{type1}} class="form-control" id="password" ngModel required name="password"  minlength="10" maxlength="50" pattern="\w+(\*|#|@|!)+\w*" #password="ngModel">
+    <p *ngIf="!password.value && password.touched">*Required field</p>
+    <p *ngIf="!password.valid && password.touched && password.value">*Invalid it just contain special character</p>
+    <p *ngIf="!password.valid && password.touched && password.value.length < 10">*it should contain more than 10 characters</p>
+  </div>
+  <div class="form-group">
+    <div class="passlabel">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <fa-icon [icon]="conpasswordVisible ? faEye : faEyeSlash" (click)="showConfirmPassword()"></fa-icon>
+    </div>
+    <input type={{type2}} class="form-control" id="confirmPassword" ngModel required name="confirmPassword" maxlength="50" pattern="\w+(\*|#|@|!)+\w*" #conpassword="ngModel">
+    <p *ngIf="!conpassword.value && conpassword.touched">*Required field</p>
+    <p *ngIf="!(password.value == conpassword.value) && conpassword.touched && conpassword.value">*Don't match</p>
+  </div>
+  <br>
+  <div class="create">
+    <button type="submit" [disabled]="!form.valid" [ngClass]="{vaild: form.valid}">Register</button>
+  </div>
+  <div class="login">
+    <p>Already have an ccount?<a href="#" [routerLink]="['../','login']"> Log in  </a></p>
+  </div>
+</form>

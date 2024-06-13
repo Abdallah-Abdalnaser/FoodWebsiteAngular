@@ -1,0 +1,33 @@
+<form action="" (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <h1>Account</h1>
+  <div class="info">
+    <h2>Log in</h2>
+    <p>To access your account</p>
+  </div>
+  <div class="form-group">
+    <label for="Email address" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="Email address" aria-describedby="emailHelp" ngModel name="email" required email #email="ngModel">
+    <p *ngIf="!email.valid  && email.touched">*Invalid Email</p>
+  </div>
+  <div class="form-group">
+    <div class="passlabel">
+      <label for="password" class="form-label">Password</label>
+      <fa-icon [icon]="passwordVisible ? faEye : faEyeSlash" (click)="showpassword()"></fa-icon>
+    </div>
+    <input type="{{type}}" class="form-control" id="password" aria-describedby="emailHelp" ngModel name="password" required>
+  </div>
+  <div class="forget">
+    <a href="#">I forget my password</a>
+  </div>
+  <br>
+  <div class="create">
+    <div class="alert alert-danger" role="alert" style="color:white;font-weight:600" *ngIf="message !==''">
+      *{{message}}
+    </div>
+    <button type="submit" [disabled]="!form.valid" [ngClass]="{vaild: form.valid}">Log in</button>
+  </div>
+  <div class="newaccount">
+    <p>Don't have an account?</p>
+    <button type="button" [routerLink]="['../','register']">Create an account</button>
+  </div>
+</form>

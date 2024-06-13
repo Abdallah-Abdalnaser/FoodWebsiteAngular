@@ -1,0 +1,19 @@
+<div class="search">
+  <input type="search" name="FoodName" placeholder="Search Food Mine!"  #nameOfFood (input)="search2(nameOfFood.value)">
+  <button (click)="search2(nameOfFood.value)">Search</button>
+  <div class="seggest" [ngClass]="{active:Search.length !== 0}">
+    <div class="cart" *ngFor="let card of Search">
+      <figure>
+        <img src={{card.image}} alt="">
+      </figure>
+      <figcaption>
+        <p [routerLink]="['/user','Foodpage',card.id]">{{card.name}}</p>
+        <ul>
+          <li *ngFor="let country of card.country">
+            {{country}}
+          </li>
+        </ul>
+      </figcaption>
+    </div>
+  </div>
+</div>

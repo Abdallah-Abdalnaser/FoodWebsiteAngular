@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FoodMineComponent } from './food-mine/food-mine.component';
-import { CartComponent } from './cart/cart.component';
-import { FoodPageComponent } from './food-page/food-page.component';
-import { NoItemComponent } from './cart/No-item/no-item-componet';
+import { UserComponent } from './user/user.component';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
-  {path:'' ,redirectTo:'/findmine',pathMatch:'full'},
-  {path:'findmine' , component:FoodMineComponent},
-  {path:'cart' , component:CartComponent,children:[
-    {path:'noitem',component:NoItemComponent}
-  ]},
-  {path:'Foodpage/:id' , component:FoodPageComponent},
+  {path:'user' , component:UserComponent},
+  {path:'auth' , component:AuthComponent},
+  {path:'' ,redirectTo:'auth/login',pathMatch:'full'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

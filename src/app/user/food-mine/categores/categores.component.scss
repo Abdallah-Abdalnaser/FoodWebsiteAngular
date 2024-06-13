@@ -1,0 +1,19 @@
+@use '../../sass/variabel.scss' as *;
+
+li {
+  padding: 10px;
+  background-color: #f3f1f1;
+  border-radius: 25px;
+  margin:5px;
+  color: $mainColor;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $mainColor;
+    color: white;
+  }
+  font: {
+    size:13px;
+    weight:500;
+  }
+}

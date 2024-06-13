@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Foods } from './shaired/food.service';
-import { CartService } from './shaired/cart.service';
+import { Foods } from './user/shaired/food.service';
+import { CartService } from './user/shaired/cart.service';
 
 @Component({
   selector: 'app-root',

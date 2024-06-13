@@ -1,0 +1,32 @@
+@use '../../sass/variabel.scss' as *;
+
+.row {
+  text-align: center;
+  box-shadow: 0px 0px 11px #eee;
+  border-radius: 8px;
+  padding: 10px;
+  p {
+    margin: 10px 0px;
+    &:nth-child(1) {
+      margin-top: 25px;
+    }
+    &:nth-child(2) {
+      margin-bottom: 25px;
+    }
+    span {
+      color: $mainColor;
+      font-weight: 800;
+    }
+  }
+  button {
+    background-color: $mainColor;
+    color: white;
+    border: 0px;
+    padding: 8px 0px;
+    border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      background-color: #b55214;
+    }
+  }
+}
