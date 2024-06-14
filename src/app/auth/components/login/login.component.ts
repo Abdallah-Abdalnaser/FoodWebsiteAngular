@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { faEyeSlash, IconDefinition ,faEye} from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash, IconDefinition ,faEye ,faUser} from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 
@@ -15,6 +15,7 @@ export class LoginComponent {
   passwordVisible = false;
   faEyeSlash:IconDefinition=faEyeSlash;
   faEye:IconDefinition=faEye;
+  faUser:IconDefinition=faUser;
   exit!:boolean;
   message:string='';
   constructor(private AuthService:AuthService , private route:Router) {}

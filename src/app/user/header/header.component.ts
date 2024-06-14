@@ -1,5 +1,5 @@
 import { Component, DoCheck, SimpleChanges } from '@angular/core';
-import { IconDefinition, faCartShopping , faDoorOpen } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faCartShopping , faDoorOpen  } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../shaired/cart.service';
 
 @Component({
